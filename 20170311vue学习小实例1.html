@@ -11,6 +11,8 @@
 		<span>年龄：{{age}}</span>
 		<span>性别：{{sex}}</span>
 		<span v-for="grade of grades">{{grade.course}}{{grade.grade}}</span>
+		<button @click="sayHi">点击我</button> 
+
 	</div>
 
 	<script>
@@ -26,7 +28,13 @@
 					{course:"数学",grade:"122"},
 					{course:"英语",grade:"428"}
 				]
-			}
+			},
+			methods:{     
+                sayHi: function () {
+                	console.log('aaa');
+                	alert('123');
+                }
+            }
 
 		});
 	</script>

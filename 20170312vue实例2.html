@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue实例2</title>
+	<script type="text/javascript" src="js/vue.js"></script>
+</head>
+<body>
+	<div id="demo">
+		<input type="text" v-model="name">
+		<span>姓名：{{name}}</span>
+		<span>年龄：{{age}}</span>
+		<span>学号：{{xuehao}}</span>
+		<ul v-for="chengji of chengjis">
+			<li @click="change(chengji.grade)">{{chengji.course}}{{chengji.grade}}</li>
+		</ul>
+	</div>
+	<script>
+		var student =new Vue({
+			el:"#demo",//挂在元素
+			data:{		//数据
+				name:"myx",
+				age:"25",
+				xuehao:"2221508017",
+				chengjis:[
+					{course:"语文",grade:"100"},
+					{course:"数学",grade:"200"},
+					{course:"英语",grade:"110"},
+					{course:"政治",grade:"120"}
+				]
+			},
+			methods:{
+				change:function(grade){
+					alert(grade);
+				}
+			}
+		});
+	</script>
+</body>
+</html>
